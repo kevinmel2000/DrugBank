@@ -5,7 +5,7 @@ public class MySqlConnectClass {
 	public static Connection connectDb(){
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection ret=DriverManager.getConnection("jdbc:mysql://localhost/DrugBank?useSSL=false","root","root");
+			Connection ret=DriverManager.getConnection("jdbc:mysql://localhost/mysql?useSSL=false","root","root");
 		    
 		    return ret;
 			//here user is root

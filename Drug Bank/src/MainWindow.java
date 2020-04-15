@@ -63,31 +63,36 @@ public class MainWindow {
 		
 		
 		frame = new JFrame();
+		frame.getContentPane().setForeground(new Color(0, 51, 0));
 		frame.setResizable(false);
 		frame.setBounds(100, 100, 875, 715);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Drug Bank");
+		JLabel lblNewLabel = new JLabel("DRUG BANK");
+		lblNewLabel.setForeground(new Color(102, 51, 51));
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 48));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(99, 42, 328, 56);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JLabel lblWelcome = new JLabel("welcome");
+		JLabel lblWelcome = new JLabel("WELCOME");
+		lblWelcome.setForeground(new Color(0, 0, 0));
 		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWelcome.setFont(new Font("Dialog", Font.BOLD, 30));
 		lblWelcome.setBounds(99, 110, 328, 48);
 		frame.getContentPane().add(lblWelcome);
 		
-		JLabel lblNeedMedicalHelp = new JLabel("Need Medical Help?");
+		JLabel lblNeedMedicalHelp = new JLabel("Medical Help");
+		lblNeedMedicalHelp.setForeground(new Color(128, 0, 0));
 		lblNeedMedicalHelp.setFont(new Font("Dialog", Font.BOLD, 24));
 		lblNeedMedicalHelp.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNeedMedicalHelp.setBounds(99, 274, 682, 29);
+		lblNeedMedicalHelp.setBounds(99, 274, 682, 35);
 		frame.getContentPane().add(lblNeedMedicalHelp);
 		
-		JLabel lblAreAnAdmin = new JLabel("Are You An Admin?");
-		lblAreAnAdmin.setHorizontalAlignment(SwingConstants.LEFT);
+		JLabel lblAreAnAdmin = new JLabel("Admin Login");
+		lblAreAnAdmin.setForeground(new Color(128, 0, 0));
+		lblAreAnAdmin.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAreAnAdmin.setFont(new Font("Dialog", Font.BOLD, 18));
 		lblAreAnAdmin.setBounds(579, 30, 202, 29);
 		frame.getContentPane().add(lblAreAnAdmin);
@@ -109,6 +114,7 @@ public class MainWindow {
 		textField.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Login");
+		btnNewButton.setForeground(new Color(0, 0, 0));
 		btnNewButton.addActionListener(new ActionListener() {
 			
 			
@@ -119,10 +125,24 @@ public class MainWindow {
 					create.executeUpdate();
 					
 					PreparedStatement pst=(PreparedStatement) conn.prepareStatement("select *from UserPassword where User=? and Password=?");
+					pst.setString(1,"omar");
+					pst.setString(2,"pass");
+					
+					ResultSet rs=pst.executeQuery();
+					
+					if(!rs.next()) {
+						pst=(PreparedStatement) conn.prepareStatement("insert into UserPassword(User,Password) values(?,?)");
+						pst.setString(1,"omar" );
+						pst.setString(2, "pass");
+						pst.execute();
+					}
+					
+					
+					pst=(PreparedStatement) conn.prepareStatement("select *from UserPassword where User=? and Password=?");
 					pst.setString(1,textField.getText());
 					pst.setString(2,passwordField.getText());
 					
-					ResultSet rs=pst.executeQuery();
+					rs=pst.executeQuery();
 					
 					if(rs.next())AdminWindow.AdminWin();
 					else JOptionPane.showMessageDialog(null,"User ID And Password Didn't Matched!");
@@ -139,6 +159,7 @@ public class MainWindow {
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Reset");
+		btnNewButton_1.setForeground(new Color(0, 0, 0));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				textField.setText(null);
@@ -155,10 +176,12 @@ public class MainWindow {
 		passwordField.setBounds(677, 109, 104, 19);
 		frame.getContentPane().add(passwordField);
 		
-		JLabel lblSearchForThe = new JLabel("Search For The Medical Solution Bellow");
+		JLabel lblSearchForThe = new JLabel("Search For Medical Solution:");
+		lblSearchForThe.setForeground(new Color(255, 0, 0));
+		lblSearchForThe.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblSearchForThe.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSearchForThe.setFont(new Font("Dialog", Font.BOLD, 20));
-		lblSearchForThe.setBounds(99, 348, 682, 19);
+		lblSearchForThe.setBounds(99, 347, 339, 29);
 		frame.getContentPane().add(lblSearchForThe);
 		
 		textField_1 = new JTextField();
@@ -179,6 +202,7 @@ public class MainWindow {
 		frame.getContentPane().add(comboBox);
 		
 		JButton btnSearch = new JButton("Search");
+		btnSearch.setForeground(new Color(0, 0, 0));
 		
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -217,6 +241,7 @@ public class MainWindow {
 		frame.getContentPane().add(btnSearch);
 		
 		JButton btnReset = new JButton("Reset");
+		btnReset.setForeground(new Color(0, 0, 0));
 		
 		
 		
@@ -232,6 +257,7 @@ public class MainWindow {
 		frame.getContentPane().add(btnReset);
 		
 		JButton btnHelp = new JButton("Help");
+		btnHelp.setForeground(new Color(0, 0, 0));
 		btnHelp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				HelpWindow.helpWin();
@@ -243,16 +269,20 @@ public class MainWindow {
 		frame.getContentPane().add(btnHelp);
 		
 		JLabel label_1 = new JLabel("Need Help For Searching?");
+		label_1.setForeground(new Color(0, 0, 0));
 		label_1.setFont(new Font("Dialog", Font.BOLD, 18));
 		label_1.setBounds(99, 585, 299, 27);
 		frame.getContentPane().add(label_1);
 		
-		JLabel lblWantToSee = new JLabel("Want To See The Full Database?");
+		JLabel lblWantToSee = new JLabel("Complete Drug Database:");
+		lblWantToSee.setForeground(new Color(0, 0, 0));
+		lblWantToSee.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWantToSee.setFont(new Font("Dialog", Font.BOLD, 18));
 		lblWantToSee.setBounds(219, 516, 334, 29);
 		frame.getContentPane().add(lblWantToSee);
 		
 		JButton btnSee = new JButton("See");
+		btnSee.setForeground(new Color(0, 0, 0));
 		btnSee.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				java.sql.Connection conn=MySqlConnectClass.connectDb();

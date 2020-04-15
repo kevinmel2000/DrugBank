@@ -82,26 +82,21 @@ public class AdminWindow {
 		btnRemoveDrug.setBounds(423, 206, 223, 23);
 		frame.getContentPane().add(btnRemoveDrug);
 		
-		JLabel lblWelcome = new JLabel("Welcome Mr. Admin!");
-		lblWelcome.setFont(new Font("Dialog", Font.BOLD, 20));
+		JLabel lblWelcome = new JLabel("Admin");
+		lblWelcome.setForeground(new Color(0, 0, 0));
+		lblWelcome.setFont(new Font("Dialog", Font.BOLD, 24));
 		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
-		lblWelcome.setBounds(243, 23, 266, 32);
+		lblWelcome.setBounds(239, 73, 266, 32);
 		frame.getContentPane().add(lblWelcome);
-		
-		JLabel lblYouHaveThe = new JLabel("You Have The Power To Do Betterment!");
-		lblYouHaveThe.setHorizontalAlignment(SwingConstants.CENTER);
-		lblYouHaveThe.setFont(new Font("Dialog", Font.BOLD, 20));
-		lblYouHaveThe.setBounds(124, 67, 522, 23);
-		frame.getContentPane().add(lblYouHaveThe);
 		
 		JLabel lblFoundNewDrug = new JLabel("Found New Drug To Add?");
 		lblFoundNewDrug.setFont(new Font("Dialog", Font.BOLD, 16));
-		lblFoundNewDrug.setBounds(98, 161, 323, 35);
+		lblFoundNewDrug.setBounds(98, 161, 323, 23);
 		frame.getContentPane().add(lblFoundNewDrug);
 		
-		JLabel lblWantToRemove = new JLabel("Want To Remove Some Drug(s)?");
+		JLabel lblWantToRemove = new JLabel("Want To Remove Drug(s)?");
 		lblWantToRemove.setFont(new Font("Dialog", Font.BOLD, 16));
-		lblWantToRemove.setBounds(98, 206, 323, 32);
+		lblWantToRemove.setBounds(98, 206, 323, 23);
 		frame.getContentPane().add(lblWantToRemove);
 		
 		JLabel lblIfYouForgot = new JLabel("Want Changes In Admin Panel?");
@@ -232,5 +227,12 @@ public class AdminWindow {
 		JSeparator separator = new JSeparator();
 		separator.setBounds(98, 269, 548, 2);
 		frame.getContentPane().add(separator);
+		
+		JLabel lblNewLabel = new JLabel("DRUG BANK");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setForeground(new Color(102, 51, 51));
+		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 36));
+		lblNewLabel.setBounds(208, 22, 328, 56);
+		frame.getContentPane().add(lblNewLabel);
 	}
 }
