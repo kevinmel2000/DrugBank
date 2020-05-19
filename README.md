@@ -14,9 +14,9 @@ A user can get detailed information about a specific medicine from this applicat
 A user can also see the complete medicine database if (s)he wants.
 
 #### Admin
-Only admins are authorized to modify medicine information or the admin panel.
-###### Default admin
-    User: omar
+Only admins are authorized to modify medicine information and the admin panel. The default admin is:
+    
+    ID: omar
     Password: pass
     
 # How to run the program
