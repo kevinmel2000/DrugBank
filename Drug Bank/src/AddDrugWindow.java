@@ -105,7 +105,7 @@ public class AddDrugWindow {
 				java.sql.Connection conn=MySqlConnectClass.connectDb();
 				PreparedStatement create;
 				try {
-					create = (PreparedStatement) conn.prepareStatement("CREATE TABLE IF NOT EXISTS DrugTable(Id int NOT NULL AUTO_INCREMENT, Name varchar(255), BrandName varchar(255), GenericName varchar(255), Indication varchar(255), Dose varchar(255),PriceInBDT varchar(255), PRIMARY KEY(Id))");
+					create = (PreparedStatement) conn.prepareStatement("CREATE TABLE IF NOT EXISTS DrugTable(Id int NOT NULL AUTO_INCREMENT, Name varchar(10005), BrandName varchar(10005), GenericName varchar(10005), Indication varchar(10005), Dose varchar(10005),PriceInBDT varchar(10005), PRIMARY KEY(Id))");
 					create.executeUpdate();
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block

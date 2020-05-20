@@ -97,14 +97,14 @@ public class MainWindow {
 		lblAreAnAdmin.setBounds(579, 30, 202, 29);
 		frame.getContentPane().add(lblAreAnAdmin);
 		
-		JLabel lblId = new JLabel("ID");
+		JLabel lblId = new JLabel("username");
 		lblId.setFont(new Font("Dialog", Font.BOLD, 16));
-		lblId.setBounds(579, 67, 31, 29);
+		lblId.setBounds(575, 62, 97, 29);
 		frame.getContentPane().add(lblId);
 		
-		JLabel lblPassword = new JLabel("Password");
+		JLabel lblPassword = new JLabel("password");
 		lblPassword.setFont(new Font("Dialog", Font.BOLD, 16));
-		lblPassword.setBounds(579, 97, 93, 43);
+		lblPassword.setBounds(575, 97, 97, 43);
 		frame.getContentPane().add(lblPassword);
 		
 		textField = new JTextField();
@@ -121,7 +121,7 @@ public class MainWindow {
 			public void actionPerformed(ActionEvent arg0) {
 				try{
 					java.sql.Connection conn=MySqlConnectClass.connectDb();//databaseConnected
-					PreparedStatement create=(PreparedStatement) conn.prepareStatement("CREATE TABLE IF NOT EXISTS UserPassword(id int NOT NULL AUTO_INCREMENT, User varchar(255), Password varchar(255), PRIMARY KEY(id))");
+					PreparedStatement create=(PreparedStatement) conn.prepareStatement("CREATE TABLE IF NOT EXISTS UserPassword(id int NOT NULL AUTO_INCREMENT, User varchar(10005), Password varchar(10005), PRIMARY KEY(id))");
 					create.executeUpdate();
 					
 					PreparedStatement pst=(PreparedStatement) conn.prepareStatement("select *from UserPassword where User=? and Password=?");
@@ -176,12 +176,12 @@ public class MainWindow {
 		passwordField.setBounds(677, 109, 104, 19);
 		frame.getContentPane().add(passwordField);
 		
-		JLabel lblSearchForThe = new JLabel("Search For Medical Solution:");
-		lblSearchForThe.setForeground(new Color(255, 0, 0));
+		JLabel lblSearchForThe = new JLabel("Search For Medicine Information");
+		lblSearchForThe.setForeground(Color.BLACK);
 		lblSearchForThe.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblSearchForThe.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSearchForThe.setFont(new Font("Dialog", Font.BOLD, 20));
-		lblSearchForThe.setBounds(99, 347, 339, 29);
+		lblSearchForThe.setBounds(99, 347, 394, 29);
 		frame.getContentPane().add(lblSearchForThe);
 		
 		textField_1 = new JTextField();
@@ -211,7 +211,7 @@ public class MainWindow {
 				java.sql.Connection conn=MySqlConnectClass.connectDb();
 				PreparedStatement create;
 				try {
-					create = (PreparedStatement) conn.prepareStatement("CREATE TABLE IF NOT EXISTS DrugTable(Id int NOT NULL AUTO_INCREMENT, Name varchar(255), BrandName varchar(255), GenericName varchar(255), Indication varchar(255), Dose varchar(255),PriceInBDT varchar(255), PRIMARY KEY(Id))");
+					create = (PreparedStatement) conn.prepareStatement("CREATE TABLE IF NOT EXISTS DrugTable(Id int NOT NULL AUTO_INCREMENT, Name varchar(10005), BrandName varchar(10005), GenericName varchar(10005), Indication varchar(10005), Dose varchar(10005),PriceInBDT varchar(10005), PRIMARY KEY(Id))");
 					create.executeUpdate();
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
@@ -274,7 +274,7 @@ public class MainWindow {
 		label_1.setBounds(99, 585, 299, 27);
 		frame.getContentPane().add(label_1);
 		
-		JLabel lblWantToSee = new JLabel("Complete Drug Database:");
+		JLabel lblWantToSee = new JLabel("Complete Drug Database");
 		lblWantToSee.setForeground(new Color(0, 0, 0));
 		lblWantToSee.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWantToSee.setFont(new Font("Dialog", Font.BOLD, 18));
@@ -288,7 +288,7 @@ public class MainWindow {
 				java.sql.Connection conn=MySqlConnectClass.connectDb();
 				PreparedStatement create;
 				try {
-					create = (PreparedStatement) conn.prepareStatement("CREATE TABLE IF NOT EXISTS DrugTable(Id int NOT NULL AUTO_INCREMENT, Name varchar(255), BrandName varchar(255), GenericName varchar(255), Indication varchar(255), Dose varchar(255),PriceInBDT varchar(255), PRIMARY KEY(Id))");
+					create = (PreparedStatement) conn.prepareStatement("CREATE TABLE IF NOT EXISTS DrugTable(Id int NOT NULL AUTO_INCREMENT, Name varchar(10005), BrandName varchar(10005), GenericName varchar(10005), Indication varchar(10005), Dose varchar(10005),PriceInBDT varchar(10005), PRIMARY KEY(Id))");
 					create.executeUpdate();
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
@@ -300,7 +300,7 @@ public class MainWindow {
 		});
 		btnSee.setFont(new Font("Dialog", Font.BOLD, 18));
 		btnSee.setBackground(new Color(211, 211, 211));
-		btnSee.setBounds(555, 515, 117, 30);
+		btnSee.setBounds(522, 515, 117, 30);
 		frame.getContentPane().add(btnSee);
 		
 		JSeparator separator = new JSeparator();

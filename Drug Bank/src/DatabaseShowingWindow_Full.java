@@ -48,20 +48,20 @@ public class DatabaseShowingWindow_Full {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setBounds(100, 100, 1415, 680);
+		frame.setBounds(100, 100, 1415, 440);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setFont(new Font("Dialog", Font.PLAIN, 16));
-		scrollPane.setBounds(31, 69, 1360, 552);
+		scrollPane.setBounds(31, 69, 1360, 306);
 		frame.getContentPane().add(scrollPane);
 		
 		table = new JTable();
 		table.setFont(new Font("Dialog", Font.PLAIN, 16));
 		scrollPane.setViewportView(table);
 		
-		JLabel lblDatabase = new JLabel("DATABASE");
+		JLabel lblDatabase = new JLabel("Medicine Database");
 		lblDatabase.setFont(new Font("Dialog", Font.BOLD, 20));
 		lblDatabase.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDatabase.setBounds(31, 12, 1360, 45);

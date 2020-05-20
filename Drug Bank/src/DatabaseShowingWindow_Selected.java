@@ -60,7 +60,7 @@ public class DatabaseShowingWindow_Selected {
 		table.setFont(new Font("Dialog", Font.PLAIN, 16));
 		scrollPane.setViewportView(table);
 		
-		JLabel lblDatabase = new JLabel("DATABASE");
+		JLabel lblDatabase = new JLabel("Medicine Database");
 		lblDatabase.setFont(new Font("Dialog", Font.BOLD, 20));
 		lblDatabase.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDatabase.setBounds(31, 12, 1360, 45);

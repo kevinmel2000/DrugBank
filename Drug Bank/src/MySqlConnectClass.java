@@ -9,8 +9,8 @@ public class MySqlConnectClass {
 		    
 		    return ret;
 			//here user is root
-			//password is pass
-			//database is DrugBank
+			//password is root (configure it manually)
+			//Default database is mysql
 			
 			
 			//JOptionPane.showMessageDialog(null,"Connection Established");
